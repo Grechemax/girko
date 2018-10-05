@@ -1,0 +1,13 @@
+.city-item {
+  display: block;
+  width: 16%;
+  min-height: 380px;
+  background-color: #333333;
+  opacity: 0.6;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+
+
+
