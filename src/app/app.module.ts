@@ -9,10 +9,11 @@ import { SearchComponent } from './home/components/search/search.component';
 import { ProfilesListComponent } from './home/components/profiles-list/profiles-list.component';
 import { ProfilesItemComponent } from './home/components/profiles-list/profiles-item/profiles-item.component';
 import { CitiesComponent } from './home/components/cities/cities.component';
-import {CityItemComponent} from './home/components/cities/city-item/city-item.component';
+import { CityItemComponent} from './home/components/cities/city-item/city-item.component';
 import { FooterComponent } from './home/components/footer/footer.component';
 import { CatalogComponent } from './home/components/catalog/catalog.component';
 import { CatalogItemComponent } from './home/components/catalog/catalog-item/catalog-item.component';
+import { HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { CatalogItemComponent } from './home/components/catalog/catalog-item/cat
     CatalogItemComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

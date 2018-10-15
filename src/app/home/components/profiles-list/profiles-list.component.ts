@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {FirebaseService} from "./firebase.service";
+import {Profile} from "../../../shared/profile.model";
+import {Subscription} from "rxjs/index";
 
 @Component({
   selector: 'app-profiles-list',
@@ -6,16 +9,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profiles-list.component.css']
 })
 export class ProfilesListComponent implements OnInit {
-  profiles = [
-    {name: 'Степан Дзюба', phone: 19812345678, money: 10500, location: 'Львів, Луцьк, Київ', imgPath: 'assets/w1.jpg'},
-    {name: 'Мирон Мавко', phone: 29812345678, money: 10600, location: 'Львів, Мукачево, Чернівці', imgPath: 'assets/w2.jpg'},
-    {name: 'Софія Стрижак', phone: 39812345678, money: 10700, location: 'Рівне, Луцьк', imgPath: 'assets/w3.jpg'},
-    {name: 'Анастасія Головіна', phone: 49812345678, money: 10800, location: 'Львів, Тернопіль', imgPath: 'assets/w4.jpg'},
-    {name: 'Петро Бампер', phone: 59812345678, money: 10900, location: 'Іванофранкіськ, Ужгород', imgPath: 'assets/w5.jpg'},
-  ]
-  constructor() { }
+  profiles: Profile[];
+  subscription: Subscription
+
+  constructor(private firebaseSRV: FirebaseService) {}
 
   ngOnInit() {
+    this.firebaseSRV.fetchData();
+    // this.subscription = this.firebaseSRV.profileChanged.subscribe(
+    //   (profiles: Profile[]) => {
+    //     this.profiles = profiles;
+    //   }
+    // );
+    // this.profiles = this.firebaseSRV.getProfiles();
   }
 
+
+
+  onGetProfiles() {
+    this.profiles = this.firebaseSRV.getProfiles();
+  }
 }

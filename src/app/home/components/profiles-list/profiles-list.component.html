@@ -1,5 +1,6 @@
 <div class="container">
   <div class="wedding-photographs"><h2>Весільні фотографи</h2></div>
+  <button (click)="onGetProfiles()" style="border: none; height: 30px; width: 70px; background-color: #b51a6a">GET PROFILES</button>
   <div class="profiles-container">
     <app-profiles-item *ngFor="let item of profiles" [item]="item"></app-profiles-item>
   </div>

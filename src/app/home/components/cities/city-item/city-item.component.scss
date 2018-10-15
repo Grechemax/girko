@@ -1,0 +1,43 @@
+.city-item {
+  text-align: center;
+  display: block;
+  float: left;
+  width: 16.66666%;
+  min-height: 380px;
+  background-color: black;
+  opacity: 0.8;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 400;
+  color: white;
+  position: relative;
+  &-text {
+    position: absolute;
+    top: 150px;
+    left: 0;
+    right: 0;
+  }
+  &-text::after{
+      content: "";
+      margin: 10px;
+      display: block;
+      position: absolute;
+      left: 50%;
+      width: 50px;
+      margin-left: -25px;
+      border-top: 1px solid #b51a6a;
+  }
+}
+.city-item:hover {
+   opacity: 0.4;
+ }
+.city-item-text:hover {
+  opacity: 1;
+}
+
+
+
+
+
+
+
