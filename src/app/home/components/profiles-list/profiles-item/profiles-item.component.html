@@ -1,20 +1,21 @@
-<div class="profile-item">
-  <img [src]="item.imgPath" alt="{{item.name}}">
+<div [routerLink]="['/app-profiles-list', profileId]" class="profile-item">
+  <img [src]="item.imgPath | DefaultPipe:'https://firebasestorage.googleapis.com/v0/b/girko12345.appspot.com/o/amster.jpg?alt=media&token=a7739062-9a94-42b7-baa2-e2efd103429c'" alt="{{item.name}}">
   <div class="caption">
     <h3><a href="#">{{item.name}}</a></h3>
-   <div class="row">
-     <div class="">
-       <i class="fas fa-phone-square"></i>
-       {{item.phone}}
-     </div>
-     <div class="">
-       <i class="far fa-money-bill-alt"></i>
-       {{item.money}}
-     </div>
-   </div>
+    <div class="row">
+      <div class="">
+        <i class="fas fa-phone-square"></i>
+        {{item.phone}}
+      </div>
+      <div class="">
+        <i class="far fa-money-bill-alt"></i>
+        {{ item.money |  currency:"UAH"}}
+      </div>
+    </div>
     <div class="location">
       <i class="fas fa-map-marker-alt"></i>
-      {{item.location}}
+      {{item.location  | titlecase}}
     </div>
   </div>
 </div>
+

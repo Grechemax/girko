@@ -7,10 +7,9 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ProfilesItemComponent implements OnInit {
   @Input() item;
-
+  @Input() profileId: number;
   constructor() { }
 
   ngOnInit() {
   }
-
 }
