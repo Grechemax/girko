@@ -1,0 +1,21 @@
+
+<div class="profile-item">
+  <img [src]="profile.imgPath" alt="{{profile.name}}">
+  <div class="caption">
+    <h3><a href="#">{{profile.name}}</a></h3>
+    <div class="row">
+      <div class="">
+        <i class="fas fa-phone-square"></i>
+        {{profile.phone}}
+      </div>
+      <div class="">
+        <i class="far fa-money-bill-alt"></i>
+        {{profile.money}}
+      </div>
+    </div>
+    <div class="location">
+      <i class="fas fa-map-marker-alt"></i>
+      {{profile.location}}
+    </div>
+  </div>
+</div>
