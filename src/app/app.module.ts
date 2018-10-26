@@ -10,7 +10,7 @@ import { ProfilesListComponent } from './home/components/profiles-list/profiles-
 import { ProfilesItemComponent } from './home/components/profiles-list/profiles-item/profiles-item.component';
 import { CitiesComponent } from './home/components/cities/cities.component';
 import { CityItemComponent} from './home/components/cities/city-item/city-item.component';
-import { FooterComponent } from './home/components/footer/footer.component';
+import { FooterComponent } from './footer/footer.component';
 import { CatalogComponent } from './home/components/catalog/catalog.component';
 import { CatalogItemComponent } from './home/components/catalog/catalog-item/catalog-item.component';
 import { HttpClientModule} from '@angular/common/http';
@@ -23,6 +23,11 @@ import {SignUpComponent} from "./auth/sign-up/sign-up.component";
 import { ProfileDetailComponent } from './home/components/profiles-list/profile-detail/profile-detail.component';
 import {DefaultPipe} from "./default.pipe";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { MusiciansComponent } from './musicians/musicians.component';
+import {MusicainsResolver} from "./shared/musicains-resolver.service";
+import {HttpModule} from "@angular/http";
+import {RouterModule} from "@angular/router";
+import {CommonModule} from "@angular/common";
 
 
 @NgModule({
@@ -43,7 +48,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     SignInComponent,
     SignUpComponent,
     ProfileDetailComponent,
-    DefaultPipe
+    DefaultPipe,
+    MusiciansComponent
   ],
   imports: [
     BrowserModule,
@@ -52,9 +58,11 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule,
+    CommonModule
   ],
-  providers: [],
+  providers: [MusicainsResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

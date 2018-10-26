@@ -12,11 +12,20 @@
   &-wraper {
     margin: 10px 15px;
     box-shadow: 1px 1px 3px 1px rgb(177, 177, 177);
+    background-color: whitesmoke;
     max-width: 300px;
     border-radius: 3px;
   }
   &-image {
     margin: 0;
     padding: 0;
+  }
+}
+.catalog-list ul {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
   }
 }

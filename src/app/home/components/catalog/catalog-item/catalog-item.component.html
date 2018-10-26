@@ -1,9 +1,13 @@
-<div class="catalogItem-wraper">
+<div class="catalogItem-wraper" [routerLink]="catalogItem.link">
 <div class="catalogItem-header">
   <span>
     {{catalogItem.category}}
   </span>
 </div>
 <div class="catalog-image"><img [src]="catalogItem.image" alt=""></div>
-<div class="catalog-list">list</div>
+<div class="catalog-list">
+  <ul>
+    <li *ngFor="let item of catalogItem.list">{{item}}</li>
+  </ul>
+</div>
 </div>

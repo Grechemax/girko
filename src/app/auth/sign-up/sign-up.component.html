@@ -1,28 +1,46 @@
 <div class="container">
-<form class="container_form" [formGroup]="regForm" (ngSubmit)="submit()">
-      <div class="form-group">
-        <div class="alert alert-danger"
-             *ngIf="regForm.controls['userEmail'].invalid && regForm.controls['userEmail'].touched">
-          Email введено невірно
-        </div>
-        <input type="email"
-               id="email"
-               name="email"
-               placeholder="email"
-               formControlName="userEmail">
+  <form class="container_form" [formGroup]="regForm" (ngSubmit)="submit()">
+    <div class="form-group">
+      <div class="alert alert-danger"
+           *ngIf="regForm.controls['userEmail'].invalid && regForm.controls['userEmail'].touched">
+        Email не введено або введено невірно
       </div>
-      <div class="form-group">
-        <div class="alert alert-danger"
-             *ngIf="regForm.controls['userPass'].invalid && regForm.controls['userPass'].touched">
-          Введіть пароль не менше 8 символів
-        </div>
-        <input type="password"
-               id="password"
-               name="password"
-               placeholder="password"
-               formControlName="userPass"
-               minlength="8">
+      <input type="email"
+             id="email"
+             name="email"
+             placeholder="email"
+             formControlName="userEmail">
+    </div>
+    <div class="form-group">
+      <div class="alert alert-danger"
+           *ngIf="regForm.controls['userPass'].invalid && regForm.controls['userPass'].touched">
+        Введіть пароль не менше 8 символів
       </div>
-      <button class="btn btn-primary" type="submit">Registration</button>
-</form>
+      <input type="password"
+             id="password"
+             name="password"
+             placeholder="password"
+             formControlName="userPass"
+             minlength="8">
+    </div>
+    <div class="form-group">
+      <div class="alert alert-danger"
+           *ngIf="regForm.controls['userCity'].invalid && regForm.controls['userCity'].touched">
+        Вкажіть місто
+      </div>
+      <input type="text"
+             id="city"
+             name="city"
+             placeholder="Місто"
+             formControlName="userCity"
+             minlength="3">
+    </div>
+    <div class="form-group">
+    <select class="form-group">
+      <option value="рік народження">рік народження</option>
+      <option *ngFor="let i of j" value="i">{{i}}</option>
+    </select>
+    </div>
+    <button class="btn btn-primary" type="submit">Registration</button>
+  </form>
 </div>

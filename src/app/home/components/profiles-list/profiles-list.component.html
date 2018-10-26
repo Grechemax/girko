@@ -4,7 +4,7 @@
   </div>
   <div class="profiles-container">
     <app-profiles-item
-      *ngFor="let itemPr of profiles; let i = index"
+      *ngFor="let itemPr of (stream | async); let i = index"
       [item]="itemPr"
       [profileId]="i">
     </app-profiles-item>

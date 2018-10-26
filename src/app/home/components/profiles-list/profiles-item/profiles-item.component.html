@@ -1,6 +1,6 @@
 <div [routerLink]="['/app-profiles-list', profileId]" class="profile-item">
   <img [src]="item.imgPath | DefaultPipe:'https://firebasestorage.googleapis.com/v0/b/girko12345.appspot.com/o/amster.jpg?alt=media&token=a7739062-9a94-42b7-baa2-e2efd103429c'" alt="{{item.name}}">
-  <div class="caption">
+  <div class="profile-item-caption">
     <h3><a href="#">{{item.name}}</a></h3>
     <div class="row">
       <div class="">

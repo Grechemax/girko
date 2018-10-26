@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import * as cities from 'src/app/shared/cities.json';
 
 @Component({
   selector: 'app-sign-up',
@@ -8,6 +9,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class SignUpComponent implements OnInit {
   regForm: FormGroup;
+  j: number[] = [];
   constructor() {
     this.regForm = new FormGroup({
       'userEmail': new FormControl('', [
@@ -15,6 +17,7 @@ export class SignUpComponent implements OnInit {
         Validators.pattern('[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}')
       ]),
       'userPass': new FormControl('', Validators.required),
+      'userCity': new FormControl('', Validators.required),
     });
   }
 
@@ -23,6 +26,13 @@ export class SignUpComponent implements OnInit {
   }
 
   ngOnInit() {
+    for (let i = 1928; i <= 2018; i++) {
+      this.j.push(i);
+    }
+    // for(let i = 0; i < cities.length; i++) {
+    //   let obj = cities[i];
+    //   console.log(obj.name);
+    // }
   }
 
 }

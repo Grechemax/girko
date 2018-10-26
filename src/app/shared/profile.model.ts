@@ -6,5 +6,6 @@ export class Profile {
     public money: number,
     public name: string,
     public phone: number,
+    desc: string
   ) {}
 }

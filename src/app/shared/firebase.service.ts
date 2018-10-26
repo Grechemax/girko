@@ -19,15 +19,20 @@ export class FirebaseService {
   //   return this.profiles;
   // }
 
-  getProfile(id: number) {
-    console.log('getting id in GetProfile', this.profiles[id]);
-    return this.profilesList[id];
-  }
+  // getProfile(id: number) {
+  //   console.log('getting id in GetProfile', this.profiles[id]);
+  //   return this.profilesList[id];
+  // }
+  //
+  // getData() {
+  //   this.profilesList = this.firebase.list('profiles'); // ????? why
+  //   console.log('profiles List in service', this.profilesList);
+  //   return this.profilesList;
+  // }
 
-  getData() {
-    this.profilesList = this.firebase.list('profiles'); // ????? why
-    console.log('profiles List in service', this.profilesList);
-    return this.profilesList;
+  // fetch all data from firebase
+  fetchProfileData() {
+    return this.httpClient.get('https://girko12345.firebaseio.com/profiles.json');
   }
 
   // fetchData() {
@@ -46,5 +51,14 @@ export class FirebaseService {
   //   setProfiles(firebaseProfiles: Profile[]) {
   //     this.profiles = firebaseProfiles; // writting gotten profiles to service's profile.
   //   }
+
+
+  getMusicians() {
+    return this.httpClient.get('https://girko12345.firebaseio.com/musicians.json', {
+      observe: 'body',
+      responseType: 'json'
+    });
   }
+  }
+
 
