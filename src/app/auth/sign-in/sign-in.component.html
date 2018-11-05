@@ -1,5 +1,5 @@
 <div class="container">
-  <form class="container_form">
+  <form class="container_form" (ngSubmit)="onSignIn(signForm)" #signForm="ngForm">
     <div class="form-group">
       <input type="email"
              id="email"

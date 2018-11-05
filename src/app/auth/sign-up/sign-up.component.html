@@ -1,5 +1,5 @@
 <div class="container">
-  <form class="container_form" [formGroup]="regForm" (ngSubmit)="submit()">
+  <form class="container_form" [formGroup]="regForm" (ngSubmit)="onSignUp(regForm)">
     <div class="form-group">
       <div class="alert alert-danger"
            *ngIf="regForm.controls['userEmail'].invalid && regForm.controls['userEmail'].touched">
@@ -41,6 +41,9 @@
       <option *ngFor="let i of j" value="i">{{i}}</option>
     </select>
     </div>
-    <button class="btn btn-primary" type="submit">Registration</button>
+    <button
+      class="btn btn-primary"
+      type="submit"
+      (click)="onSignUp()">Registration</button>
   </form>
 </div>

@@ -49,10 +49,14 @@ export class ProfileDetailComponent implements OnInit {
         }
       );
     // fetch data from firebase.service.ts
-    this.firebaseService.fetchProfileData().toPromise().then(profiles => {
-      console.log(profiles);
-      this.profile = profiles[this.id];
-    });
+    // this.firebaseService.fetchProfileData().toPromise().then(profiles => {
+    //   console.log(profiles);
+    //   this.profile = profiles[this.id];
+    // });
+    this.firebaseService.fetchProfileData()
+      .subscribe(
+        (gettingValue) => {this.profile = gettingValue[this.id]}
+      );
   }
 }
 

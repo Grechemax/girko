@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormControl, FormGroup, NgForm, Validators} from "@angular/forms";
 import * as cities from 'src/app/shared/cities.json';
+import {AuthService} from "../auth.service";
 
 @Component({
   selector: 'app-sign-up',
@@ -10,7 +11,8 @@ import * as cities from 'src/app/shared/cities.json';
 export class SignUpComponent implements OnInit {
   regForm: FormGroup;
   j: number[] = [];
-  constructor() {
+
+  constructor(private auth: AuthService) {
     this.regForm = new FormGroup({
       'userEmail': new FormControl('', [
         Validators.required,
@@ -21,9 +23,12 @@ export class SignUpComponent implements OnInit {
     });
   }
 
-  submit() {
-    console.log(this.regForm);
-  }
+
+    onSignUp(form: NgForm) {
+    const pass = form.value.userPass;
+    const email = form.value.userEmail;
+    this.auth.signUpUser(email, pass);
+    }
 
   ngOnInit() {
     for (let i = 1928; i <= 2018; i++) {

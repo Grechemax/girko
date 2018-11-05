@@ -28,6 +28,7 @@ import {MusicainsResolver} from "./shared/musicains-resolver.service";
 import {HttpModule} from "@angular/http";
 import {RouterModule} from "@angular/router";
 import {CommonModule} from "@angular/common";
+import { ForbiddenComponent } from './forbidden/forbidden.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import {CommonModule} from "@angular/common";
     SignUpComponent,
     ProfileDetailComponent,
     DefaultPipe,
-    MusiciansComponent
+    MusiciansComponent,
+    ForbiddenComponent
   ],
   imports: [
     BrowserModule,

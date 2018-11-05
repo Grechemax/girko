@@ -7,6 +7,7 @@ import {ProfilesListComponent} from "./home/components/profiles-list/profiles-li
 import {ProfileDetailComponent} from "./home/components/profiles-list/profile-detail/profile-detail.component";
 import {MusiciansComponent} from "./musicians/musicians.component";
 import {MusicainsResolver} from "./shared/musicains-resolver.service";
+import {ForbiddenComponent} from "./forbidden/forbidden.component";
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -18,7 +19,8 @@ const appRoutes: Routes = [
     component: MusiciansComponent
   },
   {path: 'app-profiles-list', component: ProfilesListComponent},
-  {path: 'app-profiles-list/:id', component: ProfileDetailComponent}
+  {path: 'app-profiles-list/:id', component: ProfileDetailComponent},
+  {path: 'forbidden', component: ForbiddenComponent}
 ]
 
 @NgModule({

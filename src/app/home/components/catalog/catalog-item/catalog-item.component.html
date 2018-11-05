@@ -1,4 +1,4 @@
-<div class="catalogItem-wraper" [routerLink]="catalogItem.link">
+<div class="catalogItem-wraper" (click)="navigateGuard()">
 <div class="catalogItem-header">
   <span>
     {{catalogItem.category}}
@@ -11,3 +11,6 @@
   </ul>
 </div>
 </div>
+
+
+
