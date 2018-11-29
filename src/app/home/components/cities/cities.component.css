@@ -1,5 +1,6 @@
 .cities-block {
   background: url('src/assets/cities.png');
+  background-position: center;
   min-height: 380px;
   flex-wrap: wrap;
   position: relative;

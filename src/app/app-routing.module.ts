@@ -8,10 +8,11 @@ import {ProfileDetailComponent} from "./home/components/profiles-list/profile-de
 import {MusiciansComponent} from "./musicians/musicians.component";
 import {MusicainsResolver} from "./shared/musicains-resolver.service";
 import {ForbiddenComponent} from "./forbidden/forbidden.component";
+import {CanDeactivateGuard} from "./auth/can-deactivate-guard.service";
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'signup', component: SignUpComponent},
+  {path: 'signup', component: SignUpComponent, canDeactivate: [CanDeactivateGuard]},
   {path: 'signin', component: SignInComponent},
   {
     path: 'musicians',

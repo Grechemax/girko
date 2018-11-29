@@ -1,19 +1,31 @@
 <div class="container">
-  <form class="container_form" (ngSubmit)="onSignIn(signForm)" #signForm="ngForm">
+  <form class="container_form" [formGroup]="signForm" (ngSubmit)="onSignIn(signForm)">
+
     <div class="form-group">
+      <div class="alert alert-danger"
+           *ngIf="signForm.controls['userEmail'].invalid && signForm.controls['userEmail'].touched">
+        Вкажіть email
+      </div>
       <input type="email"
              id="email"
              name="email"
-             ngModel class="form-control"
-             placeholder="email">
+             class="form-control"
+             placeholder="email"
+             formControlName="userEmail">
     </div>
+
     <div class="form-group">
+      <div class="alert alert-danger"
+           *ngIf="signForm.controls['userPass'].invalid && signForm.controls['userPass'].touched">
+        Вкажіть пароль
+      </div>
       <input type="password"
              id="password"
              name="password"
-             ngModel class="form-control"
-             placeholder="password">
+             class="form-control"
+             placeholder="password"
+             formControlName="userPass">
     </div>
-    <button class="btn btn-primary" type="submit">Вхід</button>
+    <button [disabled]="!signForm.valid" class="btn btn-primary" type="submit">Вхід</button>
   </form>
 </div>

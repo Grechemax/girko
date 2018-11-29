@@ -2,7 +2,7 @@ export class Profile {
   constructor(
     public $key: string,
     public imgPath: string,
-    public location: number,
+    public location: string,
     public money: number,
     public name: string,
     public phone: number,

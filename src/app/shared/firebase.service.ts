@@ -1,19 +1,23 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Profile} from "./profile.model";
-import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
+import {AuthService} from "../auth/auth.service";
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
-  profilesList: AngularFireList<any>;
+  private profilesUrl = 'https://girko12345.firebaseio.com/profiles.json';
+  private musiciansUrl = 'https://girko12345.firebaseio.com/musicians.json';
+  // profilesList: AngularFireList<any>;
   // selectedProfile: Profile = new Profile();
-  profiles: Profile[];
+  // profiles: Profile[];
 
-  constructor(private httpClient: HttpClient, private firebase: AngularFireDatabase) {
-  }
+  constructor(private httpClient: HttpClient,
+              private firebase: AngularFireDatabase,
+              private authService: AuthService) {}
 
   // getProfiles() {
   //   return this.profiles;
@@ -31,8 +35,16 @@ export class FirebaseService {
   // }
 
   // fetch all data from firebase
+
+
   fetchProfileData() {
-    return this.httpClient.get('https://girko12345.firebaseio.com/profiles.json');
+    // const token = this.authService.getToken();
+    return this.httpClient.get(`${this.profilesUrl}`);
+  }
+
+  getMusicians() {
+    // const token = this.authService.getToken();
+    return this.httpClient.get(`${this.musiciansUrl}`);
   }
 
   // fetchData() {
@@ -51,14 +63,6 @@ export class FirebaseService {
   //   setProfiles(firebaseProfiles: Profile[]) {
   //     this.profiles = firebaseProfiles; // writting gotten profiles to service's profile.
   //   }
-
-
-  getMusicians() {
-    return this.httpClient.get('https://girko12345.firebaseio.com/musicians.json', {
-      observe: 'body',
-      responseType: 'json'
-    });
-  }
-  }
+}
 
 

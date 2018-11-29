@@ -1,31 +1,81 @@
+<!--<header class="header-container">-->
+      <!--<div class="header-menu">-->
+        <!--<ul>-->
+          <!--<li>-->
+            <!--<a routerLink="/" class="header-brand">-->
+              <!--<img class="logo" src="assets/logo.svg" alt="Girko.net logo" height="25px">-->
+              <!--<span class="text">GIRKO</span>-->
+            <!--</a>-->
+          <!--</li>-->
+          <!--<li><a href="#photographs">Фотографи</a></li>-->
+          <!--<li><a href="#videographs">Відеоператори</a></li>-->
+          <!--<li><a a routerLink="/musicians">Музиканти</a></li>-->
+          <!--<li><a href="#entertainer">Тамада</a></li>-->
+          <!--<li><a href="#restaurants">Ресторани</a></li>-->
+        <!--</ul>-->
+
+
+
+        <!--<div class="header-auth">-->
+          <!--<ul>-->
+            <!--<li class="header-auth__registration">-->
+              <!--<a routerLink="/signup">РЕЄСТРАЦІЯ</a>-->
+            <!--</li>-->
+            <!--<li><a routerLink="/signin">Вхід</a></li>-->
+          <!--</ul>-->
+        <!--</div>-->
+      <!--</div>-->
+<!--</header>-->
+
+
 <header class="header-container">
+
   <div class="header-wraper">
-    <nav class="header-nav">
-      <div class="header-menu">
-        <ul>
-          <li>
-            <a routerLink="/" class="header-brand">
-              <img class="logo" src="assets/logo.svg" alt="Girko.net logo" height="25px">
-              <span class="text">GIRKO</span>
-            </a>
-          </li>
-          <li><a href="#photographs">Фотографи</a></li>
-          <li><a href="#videographs">Відеоператори</a></li>
-          <li><a a routerLink="/musicians">Музиканти</a></li>
-          <li><a href="#entertainer">Тамада</a></li>
-          <li><a href="#restaurants">Ресторани</a></li>
-        </ul>
-        <div class="header-auth">
-          <ul>
-            <li class="header-auth__registration">
-              <a routerLink="/signup">РЕЄСТРАЦІЯ</a>
-            </li>
-            <li><a routerLink="/signin">Вхід</a></li>
-          </ul>
-        </div>
-      </div>
+    <a href="" class="header-logo" routerLink="/">
+      <img src="assets/logo.svg" alt="" class="header-logo__image">
+      <span class="header-logo__title">Girko</span>
+    </a>
+
+    <nav class="header-navigation">
+      <ul class="navigation header-navigation__item">
+        <li class="navigation__item toolTip-holder">
+          <a href="" class="navigation__item-link" routerLinkActive="navigation__item-link--selected" routerLink="#">Фотографи</a>
+        </li>
+        <li class="navigation__item toolTip-holder">
+          <a href="" class="navigation__item-link" routerLinkActive="navigation__item-link--selected" routerLink="#">Відеооператори</a>
+        </li>
+        <li class="navigation__item toolTip-holder">
+          <a href="" class="navigation__item-link" routerLinkActive="navigation__item-link--selected" routerLink="/musicians">Музиканти</a>
+        </li>
+        <li class="navigation__item toolTip-holder">
+          <a href="" class="navigation__item-link" routerLinkActive="navigation__item-link--selected" routerLink="#">Тамада</a>
+        </li>
+        <li class="navigation__item toolTip-holder">
+          <a href="" class="navigation__item-link" routerLinkActive="navigation__item-link--selected" routerLink="#">Ресторани</a>
+        </li>
+      </ul>
     </nav>
+
+    <div class="header-auth">
+      <a href="" class="header-auth__enter" routerLink="/signin">
+        Вхід
+      </a>
+      <button class="header-auth__register" routerLink="/signup">
+        РЕЄСТРАЦІЯ
+      </button>
+    </div>
+
+    <!--<div class="header-profile" *ngIf = "userId">-->
+      <!--<img [src]="usersData?.avatarLink" alt="" class="header-profile__user-image">-->
+      <!--<span class="header-profile__user-name">{{usersData?.name}}</span>-->
+      <!--<button class="header-auth__register toolTip-holder" (click)="logOut()">-->
+        <!--Вихід-->
+      <!--</button>-->
+    <!--</div>-->
+
   </div>
 </header>
+
+
 
 

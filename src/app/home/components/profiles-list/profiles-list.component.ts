@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FirebaseService} from '../../../shared/firebase.service';
-import {Profile} from '../../../shared/profile.model';
+
 
 
 @Component({

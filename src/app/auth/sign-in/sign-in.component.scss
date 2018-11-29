@@ -24,6 +24,10 @@
       width: 170px;
       height: 44px;
     }
+    button:disabled {
+      background-color: grey;
+    }
+    input.ng-touched.ng-invalid {border:solid red 2px;}
   }
 }
 
