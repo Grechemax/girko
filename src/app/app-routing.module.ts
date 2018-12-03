@@ -9,15 +9,16 @@ import {MusiciansComponent} from "./musicians/musicians.component";
 import {MusicainsResolver} from "./shared/musicains-resolver.service";
 import {ForbiddenComponent} from "./forbidden/forbidden.component";
 import {CanDeactivateGuard} from "./auth/can-deactivate-guard.service";
+import {AuthGuard} from "./auth-guard.service";
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'signup', component: SignUpComponent, canDeactivate: [CanDeactivateGuard]},
   {path: 'signin', component: SignInComponent},
   {
-    path: 'musicians',
+    path: 'musicians', canActivate: [AuthGuard],
     resolve: {musResolver: MusicainsResolver},
-    component: MusiciansComponent
+    loadChildren: 'src/app/musicians/musician.module#MusicianModule'
   },
   {path: 'app-profiles-list', component: ProfilesListComponent},
   {path: 'app-profiles-list/:id', component: ProfileDetailComponent},

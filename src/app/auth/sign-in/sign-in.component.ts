@@ -28,6 +28,5 @@ export class SignInComponent implements OnInit {
   const pass = form.value.userPass;
     this.authService.signInUser(email, pass);
     console.log(email, pass);
-    console.log('TYYYYYYYYYPE', typeof email);
   }
 }//

@@ -9,8 +9,8 @@ import {AuthService} from "../auth/auth.service";
   providedIn: 'root'
 })
 export class FirebaseService {
-  private profilesUrl = 'https://girko12345.firebaseio.com/profiles.json';
-  private musiciansUrl = 'https://girko12345.firebaseio.com/musicians.json';
+  private profilesUrl = 'https://girko12345.firebaseio.com/profiles.json?auth=';
+  private musiciansUrl = 'https://girko12345.firebaseio.com/musicians.json?auth=';
   // profilesList: AngularFireList<any>;
   // selectedProfile: Profile = new Profile();
   // profiles: Profile[];
@@ -19,50 +19,17 @@ export class FirebaseService {
               private firebase: AngularFireDatabase,
               private authService: AuthService) {}
 
-  // getProfiles() {
-  //   return this.profiles;
-  // }
-
-  // getProfile(id: number) {
-  //   console.log('getting id in GetProfile', this.profiles[id]);
-  //   return this.profilesList[id];
-  // }
-  //
-  // getData() {
-  //   this.profilesList = this.firebase.list('profiles'); // ????? why
-  //   console.log('profiles List in service', this.profilesList);
-  //   return this.profilesList;
-  // }
-
-  // fetch all data from firebase
 
 
   fetchProfileData() {
-    // const token = this.authService.getToken();
-    return this.httpClient.get(`${this.profilesUrl}`);
+    const token = this.authService.getToken();
+    return this.httpClient.get(`${this.profilesUrl}` + token);
   }
 
   getMusicians() {
-    // const token = this.authService.getToken();
-    return this.httpClient.get(`${this.musiciansUrl}`);
+    const token = this.authService.getToken();
+    return this.httpClient.get(`${this.musiciansUrl}` + token);
   }
-
-  // fetchData() {
-  //   // return this.httpClient.get<Profile[]>('https://girko12345.firebaseio.com/profiles.json', {
-  //   this.httpClient.get<Profile[]>('https://girko12345.firebaseio.com/profiles.json', {
-  //     observe: 'body',
-  //     responseType: 'json'
-  //   }).subscribe(
-  //         (resp) => {
-  //           this.setProfiles(resp); // using method to write gotten profiles to service's profile.
-  //           console.log('service fetch',  this.profiles);
-  //         }
-  //       );
-  //   }
-  //
-  //   setProfiles(firebaseProfiles: Profile[]) {
-  //     this.profiles = firebaseProfiles; // writting gotten profiles to service's profile.
-  //   }
 }
 
 

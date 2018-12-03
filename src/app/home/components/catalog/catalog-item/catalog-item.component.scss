@@ -1,4 +1,5 @@
 .catalogItem {
+
   &-header {
     background-color: #e5509d;
     border-top-left-radius: 3px;
@@ -15,6 +16,9 @@
     background-color: whitesmoke;
     max-width: 300px;
     border-radius: 3px;
+    a {
+      text-decoration: none;
+    }
   }
   &-image {
     margin: 0;
@@ -27,5 +31,6 @@
   padding: 0;
   li {
     list-style: none;
+    color: black;
   }
 }

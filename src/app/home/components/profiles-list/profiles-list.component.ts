@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FirebaseService} from '../../../shared/firebase.service';
+import {AuthService} from "../../../auth/auth.service";
 
 
 
@@ -13,25 +14,12 @@ export class ProfilesListComponent implements OnInit {
   stream;
 
 
-  constructor(private firebaseService: FirebaseService) {}
+  constructor(private firebaseService: FirebaseService,
+              private authService: AuthService) {
+    console.log('is Authenticated: ', this.authService.isAuthenticated());
+  }
 
   ngOnInit() {
     this.stream = this.firebaseService.fetchProfileData(); // return stream approach. Avoid subscribe in service.
-    // this.firebaseService.fetchData(); // httpClient approach
-    // this.profiles = this.firebaseService.getData();
-    //
-    //
-    // const x = this.firebaseService.getData();
-    // x.snapshotChanges().subscribe(
-    //   item => {
-    //     this.profiles = [];
-    //     item.forEach(element => {
-    //       const y = element.payload.toJSON();
-    //       y['$key'] = element.key;
-    //       this.profiles.push(y as Profile);
-    //     });
-    //     console.log('profiles in ProfilesListComponent', this.profiles);
-    //   }
-    // );
   }
 }

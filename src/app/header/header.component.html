@@ -39,30 +39,37 @@
     <nav class="header-navigation">
       <ul class="navigation header-navigation__item">
         <li class="navigation__item toolTip-holder">
-          <a href="" class="navigation__item-link" routerLinkActive="navigation__item-link--selected" routerLink="#">Фотографи</a>
+          <a href="" class="navigation__item-link" routerLink="#">Фотографи</a>
         </li>
         <li class="navigation__item toolTip-holder">
-          <a href="" class="navigation__item-link" routerLinkActive="navigation__item-link--selected" routerLink="#">Відеооператори</a>
+          <a href="" class="navigation__item-link"  routerLink="#">Відеооператори</a>
         </li>
         <li class="navigation__item toolTip-holder">
-          <a href="" class="navigation__item-link" routerLinkActive="navigation__item-link--selected" routerLink="/musicians">Музиканти</a>
+          <a href="" class="navigation__item-link"  routerLink="musicians">Музиканти</a>
         </li>
         <li class="navigation__item toolTip-holder">
-          <a href="" class="navigation__item-link" routerLinkActive="navigation__item-link--selected" routerLink="#">Тамада</a>
+          <a href="" class="navigation__item-link"  routerLink="#">Тамада</a>
         </li>
         <li class="navigation__item toolTip-holder">
-          <a href="" class="navigation__item-link" routerLinkActive="navigation__item-link--selected" routerLink="#">Ресторани</a>
+          <a href="" class="navigation__item-link" routerLink="#">Ресторани</a>
         </li>
       </ul>
     </nav>
 
     <div class="header-auth">
-      <a href="" class="header-auth__enter" routerLink="/signin">
-        Вхід
-      </a>
-      <button class="header-auth__register" routerLink="/signup">
-        РЕЄСТРАЦІЯ
-      </button>
+      <ng-template [ngIf]="!authService.isAuthenticated()">
+        <a href="" class="header-auth__enter" routerLink="/signin">
+          Log in
+        </a>
+        <button class="header-auth__register" routerLink="/signup">
+          REGISTRATION
+        </button>
+      </ng-template>
+      <ng-template [ngIf]="authService.isAuthenticated()">
+        <a href="" class="header-auth__enter" (click)="onLogout()">
+          Log out
+        </a>
+      </ng-template>
     </div>
 
     <!--<div class="header-profile" *ngIf = "userId">-->

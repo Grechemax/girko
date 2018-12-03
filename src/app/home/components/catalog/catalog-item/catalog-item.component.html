@@ -1,4 +1,6 @@
-<div class="catalogItem-wraper" (click)="navigateGuard()">
+
+<div class="catalogItem-wraper">
+  <a [routerLink]="catalogItem.routerLink">
 <div class="catalogItem-header">
   <span>
     {{catalogItem.category}}
@@ -10,6 +12,7 @@
     <li *ngFor="let item of catalogItem.list">{{item}}</li>
   </ul>
 </div>
+  </a>
 </div>
 
 

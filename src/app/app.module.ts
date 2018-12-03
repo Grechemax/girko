@@ -31,6 +31,7 @@ import {CommonModule} from "@angular/common";
 import {ForbiddenComponent} from './forbidden/forbidden.component';
 import {AuthInterceptor} from "./shared/auth.interceptor";
 import {CanDeactivateGuard} from "./auth/can-deactivate-guard.service";
+import {AuthGuard} from "./auth-guard.service";
 
 
 @NgModule({
@@ -52,7 +53,6 @@ import {CanDeactivateGuard} from "./auth/can-deactivate-guard.service";
     SignUpComponent,
     ProfileDetailComponent,
     DefaultPipe,
-    MusiciansComponent,
     ForbiddenComponent
   ],
   imports: [
@@ -68,6 +68,7 @@ import {CanDeactivateGuard} from "./auth/can-deactivate-guard.service";
     CommonModule
   ],
   providers: [
+    AuthGuard,
     MusicainsResolver,
     CanDeactivateGuard,
     {

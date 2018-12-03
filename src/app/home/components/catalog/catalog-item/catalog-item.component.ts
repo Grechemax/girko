@@ -14,8 +14,8 @@ export class CatalogItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  navigateGuard() {
-    this.authService.isAuthenticated() ? this.router.navigate(['this.catalogItem.link']) : this.router.navigate(['forbidden']);
-    console.log(this.authService.isAuthenticated());
-  }
+  // navigateGuard() {
+  //   this.authService.isAuthenticated() ? this.router.navigate([this.catalogItem.link]) : this.router.navigate(['forbidden']);
+  //   console.log(this.authService.isAuthenticated());
+  // }
 }
