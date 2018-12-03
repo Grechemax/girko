@@ -1,0 +1,23 @@
+.container {
+  min-height: 800px;
+  display: block;
+  p {
+    margin: 55px auto;
+    width: 555px;
+    font-size: 33px;
+    color: #b51a6a;
+  }
+  &:after {
+    content: "";
+    background: url('src/assets/music.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+}
