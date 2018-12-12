@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as cities from 'src/app/shared/cities.json';
+import {Observable} from "rxjs/index";
 
 @Component({
   selector: 'app-search',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  // data: Observable<Array<any>>;
+
+  constructor() {
+    // this.data = service.getPeople();
+    // const citiess = (<any>cities).name;
+    // console.log(citiess);
+  }
 
   ngOnInit() {
   }

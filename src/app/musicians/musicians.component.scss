@@ -7,9 +7,10 @@
     margin: 30px auto;
   }
   &:after {
+    height: 100%;
     content: "";
     background: url('src/assets/music.jpg');
-    background-position: center;
+    background-size: contain;
     opacity: 0.5;
     top: 0;
     left: 0;

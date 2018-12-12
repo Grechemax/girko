@@ -1,5 +1,5 @@
 <app-search></app-search>
 <app-catalog></app-catalog>
 <app-cities></app-cities>
-<app-profiles-list></app-profiles-list>
-
+<app-profiles-list *ngIf="isLogged"></app-profiles-list>
+<app-forbidden *ngIf="!isLogged"></app-forbidden>

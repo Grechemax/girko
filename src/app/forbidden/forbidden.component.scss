@@ -8,10 +8,13 @@
     color: #b51a6a;
   }
   &:after {
+    //height: auto;
+    min-height: 1000px;
     content: "";
     background: url('src/assets/music.jpg');
-    background-position: center;
+    //background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     opacity: 0.5;
     top: 0;
     left: 0;

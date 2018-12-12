@@ -1,5 +1,5 @@
-import {Component, Input, OnChanges, OnInit} from '@angular/core';
-import {ActivatedRoute, ActivatedRouteSnapshot, Data} from "@angular/router";
+import {Component, Input, OnInit} from '@angular/core';
+import {ActivatedRoute, Data} from "@angular/router";
 import 'rxjs/operators';
 
 
@@ -8,7 +8,7 @@ import 'rxjs/operators';
   templateUrl: './musicians.component.html',
   styleUrls: ['./musicians.component.scss']
 })
-async export class MusiciansComponent implements OnInit {
+export class MusiciansComponent implements OnInit {
   musicians: {name: string, price: number}[];
   @Input() musResolver;
   constructor(private route: ActivatedRoute) {

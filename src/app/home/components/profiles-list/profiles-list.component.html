@@ -4,11 +4,11 @@
   </div>
   <div class="profiles-container">
     <app-profiles-item
-      *ngFor="let itemPr of (stream | async); let i = index"
-      [item]="itemPr"
+      *ngFor="let profileItm of profiles; let i = index"
+      [item]="profileItm"
       [profileId]="i">
     </app-profiles-item>
 </div>
 </div>
 
-
+<!--(stream | async)-->

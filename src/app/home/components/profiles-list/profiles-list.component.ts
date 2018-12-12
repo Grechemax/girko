@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FirebaseService} from '../../../shared/firebase.service';
 import {AuthService} from "../../../auth/auth.service";
+import {Profile} from "../../../shared/oop/profile.model";
 
 
 
@@ -10,7 +11,8 @@ import {AuthService} from "../../../auth/auth.service";
   styleUrls: ['./profiles-list.component.css']
 })
 export class ProfilesListComponent implements OnInit {
-  profiles;
+  profiles: Profile;
+  isAuthenticated: boolean;
   stream;
 
 
@@ -20,6 +22,15 @@ export class ProfilesListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.stream = this.firebaseService.fetchProfileData(); // return stream approach. Avoid subscribe in service.
+    // this.stream = this.firebaseService.fetchProfileData(); // return stream approach. Avoid subscribe in service.
+    this.firebaseService.fetchProfileData()
+      .subscribe(
+        (resp) => {
+          this.profiles = resp;
+          console.log(this.profiles);
+        }
+      );
+    // console.log(this.firebaseService.fetchProfileData());
+    this.isAuthenticated = this.authService.isAuthenticated();
   }
 }

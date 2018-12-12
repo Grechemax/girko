@@ -25,8 +25,8 @@
 //   }
 // }
 
-import { Component, OnInit } from '@angular/core';
-import {Profile} from '../../../../shared/profile.model';
+import {Component, OnInit} from '@angular/core';
+import {Profile} from '../../../../shared/oop/profile.model';
 import {ActivatedRoute, Params} from '@angular/router';
 import {FirebaseService} from '../../../../shared/firebase.service';
 
@@ -38,8 +38,10 @@ import {FirebaseService} from '../../../../shared/firebase.service';
 export class ProfileDetailComponent implements OnInit {
   profile: Profile;
   id: number;
+
   constructor(private route: ActivatedRoute,
-              private firebaseService: FirebaseService) { }
+              private firebaseService: FirebaseService) {
+  }
 
   ngOnInit() {
     this.route.params
@@ -55,8 +57,10 @@ export class ProfileDetailComponent implements OnInit {
     // });
     this.firebaseService.fetchProfileData()
       .subscribe(
-        (gettingValue) => {this.profile = gettingValue[this.id]}
-      )
+        (gettingValue) => {
+          this.profile = gettingValue[this.id];
+        }
+      );
   }
 }
 
